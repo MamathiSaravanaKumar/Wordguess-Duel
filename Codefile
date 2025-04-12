@@ -1,0 +1,48 @@
+//One cat one cow
+import java.util.Scanner;
+
+class Wordguess {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter the string: ");
+        String s = sc.next();
+        System.out.print("Enter your guess: ");
+        String f = sc.next();
+        int cow = 0;
+        int cat = 0;
+        if (s.length() == f.length()) {
+            if (s.equals(f)) {
+                System.out.print("Perfect Match");
+
+            } else {
+                for (int i = 0; i < s.length(); i++) {
+                    for (int j = 0; j < f.length(); j++) {
+                        if (s.charAt(i) == f.charAt(j)) {
+                            if (i == j) {
+                                cat++;
+                            }
+                            else {
+                                cow++;
+                            }
+                        }
+                    }
+
+                }
+                if (cow >= 1) {
+                    System.out.println(cow + " cow");
+                }
+                if (cat >= 1) {
+                    System.out.print(cat + " cat");
+                }
+                else {
+                    System.out.print("No match found");
+                }
+
+            }
+        }
+        else{
+                System.out.print("Enter strings of equal length");
+            }
+
+    }
+}
